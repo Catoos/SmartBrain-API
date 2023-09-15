@@ -7,14 +7,15 @@ const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
+require('dotenv').config();
 
 const db = knex({
-    client: 'pg',
+    client: process.env.CLIENT,
     connection: {
-        host: '127.0.0.1',
-        user: 'postgres',
-        password: 'Bamb00zled',
-        database: 'smart-brain'
+        host: process.env.HOST,
+        user: process.env.USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DATABASE
     }
 });
 

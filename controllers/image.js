@@ -1,38 +1,8 @@
 const Clarifai = require('clarifai');
+require('dotenv').config();
 
-    // const PAT = '73a94a2592a54efe855a8f793fa49c79';
-    // const USER_ID = '12345678901';       
-    // const APP_ID = 'my-first-application';   
-    // const IMAGE_URL = imageUrl;
-  
-    // const raw = JSON.stringify({
-    //   "user_app_id": {
-    //     "user_id": USER_ID,
-    //     "app_id": APP_ID
-    //   },
-    //   "inputs": [
-    //       {
-    //           "data": {
-    //               "image": {
-    //                   "url": IMAGE_URL 
-    //               }
-    //           }
-    //       }
-    //   ]
-    // });
-  
-    // const requestOptions = {
-    //   method: 'POST',
-    //   headers: {
-    //       'Accept': 'application/json',
-    //       'Authorization': 'Key ' + PAT
-    //   },
-    //   body: raw
-    // };
-    // return requestOptions;
-    // }
     const app = new Clarifai.App({
-        apiKey: 'd30e3d69737649da99b8a08138e346c7'
+        apiKey: process.env.API_KEY
     });
     
 const handleAPICall = (req, res) => {
